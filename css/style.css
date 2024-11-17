@@ -1,0 +1,561 @@
+/* Variables de color */
+:root {
+    --azul-oscuro: #264059;
+    --azul-agua: #6EA0B1;
+    --naranja-quemado: #E5690B;
+    --marron: #9F5D35;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--azul-oscuro);
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: var(--azul-oscuro);
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+#main-header {
+    background-color: #264059;
+    color: #ffffff;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+}
+
+/* Estilo para ocultar el header cuando el usuario desplaza hacia abajo */
+#main-header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Estilo para el header cuando el usuario baja la página */
+#main-header.scrolled {
+    background-color: #2640596e; /* Azul más tenue cuando se baja */
+}
+
+
+
+
+#inicio {
+    position: relative;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: white;
+    overflow: hidden;
+}
+
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1250px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+.video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* Ajusta la opacidad para la superposición */
+}
+
+/* Asegurando que el texto sea legible sobre el video */
+h1, p {
+    color: #26313f;
+}
+
+.intro-content {
+    position: relative;
+    margin: 0 auto 0 1250px;
+    padding-top: 1rem;
+    z-index: 2; /* Para que el texto esté por encima del video */
+    color: white;
+}
+
+
+.profile-img {
+    width: 150px;
+    margin-top: 10rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+
+
+
+#sobre-mi, #testimonios, #contacto {
+    padding: 3rem 1rem;
+}
+
+h2 {
+    color: var(--azul-oscuro);
+    text-align: center;
+}
+
+.about-content, .testimonial {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    color: var(--marron);
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 100px;
+    }
+
+    .video-overlay video {
+        object-position: center; /* Centra el video en móviles */
+    }
+}
+
+
+
+
+
+
+
+
+/* Estilo para la sección Sobre Mí */
+#sobre-mi {
+    background-color: var(--azul-agua);
+    color: var(--azul-oscuro);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+#sobre-mi h2 {
+    color: var(--azul-oscuro);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Estilos para la Filosofía de Trabajo */
+.philosophy-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.philosophy-list li {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-list li strong {
+    color: var(--naranja-quemado);
+    font-weight: bold;
+}
+
+.philosophy-list li:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 0 1rem;
+    }
+
+    #sobre-mi h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* Estilo para la sección de Currículo */
+#curriculo {
+    background-color: #f5f5f5;
+    padding: 3rem 1rem;
+    color: var(--azul-oscuro);
+    text-align: center;
+}
+
+#curriculo h2 {
+    color: var(--azul-oscuro);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.curriculo-section {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: left;
+}
+
+.curriculo-section h3 {
+    font-size: 1.5rem;
+    color: var(--naranja-quemado);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--azul-oscuro);
+    padding-bottom: 0.5rem;
+}
+
+.job:hover {
+    transform: scale(1.03);
+}
+
+/* Estilos para Experiencia y Educación */
+.job, .education {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.job h4, .education h4 {
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+}
+
+.job p, .education p {
+    color: var(--marron);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.education:hover {
+    transform: scale(1.03);
+}
+
+
+/* Estilos para Habilidades Clave */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills-list li {
+    background-color: var(--azul-agua);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list:hover li {
+    background-color: #E5690B;
+}
+
+/* Responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+    .curriculo-section {
+        padding: 0 1rem;
+    }
+
+    #curriculo h2 {
+        font-size: 1.8rem;
+    }
+
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+/* Sección Proyectos */
+#proyectos {
+    background-color: #f8f9fa;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+#proyectos h2 {
+    color: var(--azul-oscuro);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#proyectos p {
+    color: var(--azul-oscuro);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+
+/* Cada proyecto individual */
+.project {
+    position: relative;
+    background-color: #dfe6eb;
+    border-radius: 10px;
+    margin: 2rem auto;
+    padding: 2rem;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    max-width: 800px;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+/* Títulos de proyectos */
+.project h3 {
+    color: var(--azul-oscuro);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Descripción del proyecto */
+.project-description {
+    color: var(--marron);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Contenido visual del proyecto */
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.project-content img, .project-content video {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+#project-video {
+    object-fit: cover;
+}
+
+.project-content img:hover, .project-content video:hover {
+    transform: scale(1.05);
+}
+
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+    .project-content img, .project-content video {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+/* Estilo para la sección de Contacto */
+#contacto {
+    background-color: #f5f5f5;
+        text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+#contacto h2 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#contacto p {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor principal */
+.contact-container {
+    max-width: 1200px;
+    height: 5%;
+    margin: 0 auto;
+    background-color: #bfcfca;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.contact-container:hover {
+    transform: scale(1.03);
+}
+
+/* Fila de información */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Redes Sociales */
+.social-links {
+    text-align: left;
+    flex: 1;
+}
+
+.social-icon {
+    margin: 20px 0px 0px 175px;
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-icon img {
+    width: 250%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10%; /* Hace los íconos circulares */
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: solid 1.5px rgba(0, 0, 0, 0.3); /* Borde normal */
+    box-shadow: 10px 20px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover img {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Ampliación sutil en hover */
+}
+
+/* Información Personal */
+.personal-info {
+    text-align: left;
+    flex: 1;
+    background-color: #1ba7d13f; /* Fondo claro para destacar la sección */
+    border-radius: 25px; /* Bordes redondeados */
+    text-align: center;
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s;
+}
+.personal-info:hover {
+    transform: scale(1.1);
+}
+
+.personal-info h3 {
+    color: #2c3e50;
+    font-size: 1.8rem; /* Aumentar tamaño del encabezado */
+    margin-bottom: 2rem;
+}
+
+.personal-info p {
+    color: #9F5D35;
+    margin-bottom: 0.8rem;
+}
+.personal-info p strong {
+    color: #55585a; /* Color destacado para etiquetas */
+}
+
+
+
+
+
+/* Descarga del CV */
+.download-cv {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.download-cv p {
+    color: #7f8c8d;
+}
+
+.cv-image {
+    width: 150px;
+    height: auto;
+}
+
+.cv-image:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15%;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .info-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .social-links, .personal-info {
+        width: 100%;
+    }
+}
